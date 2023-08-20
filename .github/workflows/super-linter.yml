@@ -21,10 +21,11 @@ jobs:
           # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0
 
-      - name: Lint Code Base
-        uses: github/super-linter@v4
+      - name: Super-Linter
+        uses: super-linter/super-linter@v5.2.1
         env:
           VALIDATE_ALL_CODEBASE: false
-          VALIDATE_ONLY_PUBLIC: true
+          VALIDATE_SRC_DIRS: public/
+          CREATE_LOG_FILE: true
           DEFAULT_BRANCH: "actions"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
