@@ -17,8 +17,9 @@ jobs:
       - name: Super-Linter
         uses: super-linter/super-linter@v5.2.1
         env:
-          VALIDATE_ALL_CODEBASE: false/
+          VALIDATE_ALL_CODEBASE: false
           FILTER_REGEX_INCLUDE: "public/.*"
+          VALIDATE_SRC_DIRS: "public"
           CREATE_LOG_FILE: true
           DEFAULT_BRANCH: "actions"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
